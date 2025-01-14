@@ -19,9 +19,9 @@ mongoose.connect(process.env.MONGO_URI, {
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Root route to serve HTML or a welcome message
+// Root route to serve HTML from the views directory
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 // Define Mongoose schema and model
